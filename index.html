@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Christ the Rock App</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!-- PHONE MODEL WRAPPER -->
+<div class="device-wrap">
+  <div class="device">
+    <div class="screen">
+      <!-- ⬇️ Your existing UI lives INSIDE this .screen ⬇️ -->
+
+      <div class="app" id="loginScreen">
+        <h1 class="titulo">Ministerio Internacional<br><span>Cristo La Roca</span></h1>
+        <p>Registro de Nuevas Visitas</p>
+        <input type="text" id="usuario" placeholder="Tu nombre de usuario" required>
+        <button onclick="iniciarSesion()">Entrar</button>
+      </div>
+
+      <div class="app" id="mainApp" style="display:none;">
+        <h2>Registro de Visitas</h2>
+        <form id="formVisitas">
+          <input type="text" id="nombre" placeholder="Nombre completo" required>
+          <input type="tel" id="telefono" placeholder="Teléfono" required>
+          <input type="text" id="ciudad" placeholder="Ciudad" required>
+          <select id="genero" required>
+            <option value="">Selecciona género</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select>
+          <button type="submit">Guardar Visita</button>
+        </form>
+
+        <table id="tablaVisitas">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Teléfono</th>
+              <th>Ciudad</th>
+              <th>Género</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <!-- ⬆️ Your UI stays inside .screen ⬆️ -->
+    </div>
+  </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

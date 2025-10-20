@@ -1,0 +1,167 @@
+/* ===== Page background ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #f1f1f1;
+  background:
+    radial-gradient(1200px 900px at 30% 10%, #1b1c1f 0%, #111216 55%, #0a0a0b 100%),
+    linear-gradient(180deg, #0b0c0e 0%, #0a0a0a 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+/* ===== Centered device ===== */
+.device-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* ===== iPhone 13 frame ===== */
+.device {
+  width: 390px;
+  height: 844px;
+  position: relative;
+  border-radius: 56px;
+  background: #0f1013;
+  box-shadow:
+    0 30px 90px rgba(0,0,0,0.6),
+    inset 0 0 0 14px #1f2024,
+    inset 0 0 0 2px #2c2d31;
+  overflow: hidden;
+}
+
+/* notch */
+.device::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 210px;
+  height: 34px;
+  background: #000;
+  border-radius: 22px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.65);
+  z-index: 5;
+}
+
+/* speaker slot */
+.device::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 6px;
+  background: #0b0b0b;
+  border-radius: 4px;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.06);
+  z-index: 6;
+}
+
+/* ===== Inner screen (scroll enabled, scrollbar hidden) ===== */
+.screen {
+  position: absolute;
+  inset: 18px;
+  border-radius: 44px;
+  background: #05070c !important;
+  overflow-y: scroll;           /* keep scroll behavior */
+  overflow-x: hidden;
+  padding: 28px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Hide scrollbar cross-browser */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/old Edge */
+}
+.screen::-webkit-scrollbar { display: none; }  /* Chrome/Safari/Opera */
+
+/* ===== Panel (tall) ===== */
+.screen .app {
+  width: 92%;
+  margin-top: 72px;             /* below logo */
+  padding: 110px 30px;          /* vertical height */
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  box-shadow:
+    0 0 25px rgba(255, 215, 0, 0.35),
+    inset 0 0 25px rgba(255, 215, 0, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+/* ===== Logo (slightly lowered) ===== */
+.logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 20px;             /* ⬇️ was 45px — now a bit lower */
+  margin-bottom: 20px;
+  border: 3px solid gold;
+  animation: fadeInLogo 1.3s ease-in-out;
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+}
+
+
+@keyframes fadeInLogo {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Text & form ===== */
+.titulo {
+  font-size: 22px;
+  color: gold;
+  margin-bottom: 10px;
+}
+.titulo span {
+  font-size: 26px;
+  display: block;
+  font-weight: bold;
+}
+
+input, select, button {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+input, select {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+button {
+  background: gold;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover { background: #ffcc33; }
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  color: #fff;
+}
+th, td {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
